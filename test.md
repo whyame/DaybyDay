@@ -10,3 +10,6 @@
     git push -u origin master
 ! [rejected]        master -> master (fetch first) //https://blog.csdn.net/mp624183768/article/details/84979850
     git fetch
+    git merge
+    git branch -vv
+    git config --lis
