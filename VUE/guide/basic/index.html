@@ -1,0 +1,42 @@
+<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<!-- 申明式渲染  -->
+<div id="app">
+    {{ message }}
+  </div>
+
+<div id="app-2">
+  <span v-bind:title="message">
+    鼠标悬停几秒钟查看此处动态绑定的提示信息！
+  </span>
+</div>
+
+<!-- 条件循环  -->
+<div id="app-3">
+  <p v-if="seen">显示条件</p>
+</div>
+
+<div id="app-for">
+  <ol>
+    <li v-for="num in array">
+      {{ num.text }}
+    </li>
+  </ol>
+</div>
+
+<!-- 用户交互事件处理 -->
+<div id="app-5">
+  <p>{{ message }}</p>
+  <button v-on:click="reverseMessage">反转消息</button>
+</div>
+
+<!-- 输入信息 -->
+<div id="user-name">
+  <input v-model="neirong">
+  <p>{{ neirong }}</p>
+</div>
+
+
+<!-- 浏览器引擎渲染机制，因此外部引用script须放置到最后？为什么不是先申明再调用。。。 -->
+<script src="start.js"></script>
