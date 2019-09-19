@@ -37,6 +37,56 @@
   <p>{{ neirong }}</p>
 </div>
 
+<div id="app-7">
+  <ol>
+    <!--
+      现在我们为每个 todo-item 提供 todo 对象
+      todo 对象是变量，即其内容可以是动态的。
+      我们也需要为每个组件提供一个“key”，稍后再
+      作详细解释。
+    -->
+    <todo-item
+      v-for="obj in groceryList"
+      v-bind:obj="obj"
+      v-bind:key="obj.id"  
+      //这里按照js注释
+    ></todo-item>
+  </ol>
+</div>
+
+<div id="app-freeze">
+  <p> {{foo}} </p>  
+  <!-- 这个要直接去找原始数据变量，在app-freeze→data→foo变量 -->
+  <button v-on:click="foo = 'baz'">Change it</button>
+</div>
+
+
+<div id="example1" >
+  <p>Using mustaches: {{ rawHtml }}</p> 
+  <!-- mustaches 语法将得到对象的字符串，而浏览器会render v-html的内容 -->
+  <p>Using v-html directive: <span v-html="rawHtml"></span></p>
+</div>
+
+
+<a v-bind:[attributeName]="url"> ... </a>
+<!-- 
+  这里的 attributeName 会被作为一个 JavaScript 表达式进行动态求值，求得的值将会作为最终的参数来使用。
+  例如，如果你的 Vue 实例有一个 data 属性 attributeName，其值为 "href"，
+  那么这个绑定将等价于 v-bind:href
+ -->
+
+ <form v-on:submit.prevent="onSubmit">...</form>
+<!--  
+  修饰符 (modifier) 是以半角句号 . 指明的特殊后缀，用于指出一个指令应该以特殊方式绑定。
+ 例如，.prevent 修饰符告诉 v-on 指令对于触发的事件调用 event.preventDefault()：
+ -->
+
+ <div id="computeapp">
+   <p> 内容：{{ neirong }} </p>
+   <p> 反转：{{ reversedMessage }} </p>
+ </div>
 
 <!-- 浏览器引擎渲染机制，因此外部引用script须放置到最后？为什么不是先申明再调用。。。 -->
 <script src="start.js"></script>
+
+
