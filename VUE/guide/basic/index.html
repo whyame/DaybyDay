@@ -1,6 +1,7 @@
 <!-- 开发环境版本，包含了有帮助的命令行警告 -->
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
 <!-- 申明式渲染  -->
 <div id="app">
     {{ message }}
@@ -86,7 +87,21 @@
    <p> 反转：{{ reversedMessage }} </p>
  </div>
 
+<!-- Computed vs Watched Property -->
+<div id="computed-nice">
+  <p> {{ fullName }} </p>
+  <p> {{ firstName }} </p>
+</div>
+
+<div id="watch-example">
+  <p>
+    Ask a yes/no question:
+    <input v-model="question">
+  </p>
+  <p>{{ answer }}</p>
+</div>
+
+
+
 <!-- 浏览器引擎渲染机制，因此外部引用script须放置到最后？为什么不是先申明再调用。。。 -->
 <script src="start.js"></script>
-
-
