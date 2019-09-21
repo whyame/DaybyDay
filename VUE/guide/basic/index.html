@@ -101,7 +101,39 @@
   <p>{{ answer }}</p>
 </div>
 
+Day 5
+
+<div id="bindclass">
+  <div v-bind:class="classObject"
+  style="width:200px;height:200px;text-align:center;line-height:200px;">
+    Hi vue!
+  </div>
+</div>
+
+
+<div id="ifclass">
+  <template v-if="loginType === 'username'">
+      <label>Username</label>
+      <input placeholder="Enter your username" key="username-input">
+    </template>
+    <template v-else>
+      <label>Email</label>
+      <input placeholder="Enter your email address" key="email-input">
+  </template>
+  <p>
+    <button v-on:click="changeInput">Change it</button>
+  </p>  
+</div>
 
 
 <!-- 浏览器引擎渲染机制，因此外部引用script须放置到最后？为什么不是先申明再调用。。。 -->
 <script src="start.js"></script>
+
+
+<style>
+.active{background: #ff0000}
+.fsize{font-size: 30px}
+.green{color: green}
+</style>
+
+

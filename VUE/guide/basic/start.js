@@ -183,4 +183,35 @@ var watchExampleVM = new Vue({
     }
   }
 })
-  
+
+var bClass = new Vue({
+  el :'#bindclass',
+  data: {
+    isActive: true,
+    error: false,
+  },
+  computed: {
+    classObject: function () {
+      return {
+        active: this.isActive && !this.error,
+        fsize: this.isActive,
+        green: !this.error,
+        'text-danger': this.error && this.error.type === 'fatal'
+      }
+    }
+  }
+})
+
+
+var fClass = new Vue({
+  el:'#ifclass',
+  data:{
+    loginType: 'username',
+
+  },
+  methods:{
+    changeInput: function(){
+      this.loginType = 'email'
+    }
+  }
+})
