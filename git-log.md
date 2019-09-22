@@ -22,5 +22,14 @@ https://www.jianshu.com/p/eaaba8dc3ab3
 fatal: refusing to merge unrelated histories
 https://blog.csdn.net/u012145252/article/details/80628451
     git pull origin master --allow-unrelated-histories
+
+#### 远程仓库同步到本地
+    git remote -v
+    //有fetch和push
+    git fetch origin master
+    //远程origin 同步到本地master
+    git merge FETCH_HEAD
+    //合并
+
     
     
